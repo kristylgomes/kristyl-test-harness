@@ -4,6 +4,10 @@ services:
     image: "postgres" # use latest official postgres version
     env_file:
       - postgres-database.env # configure postgres env
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
     volumes:
       - database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
 volumes:
